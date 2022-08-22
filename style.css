@@ -1,0 +1,239 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700;800&display=swap');
+
+:root {
+    /* primary color */
+    --clr-primary-300: hsl(341, 100%, 83%);
+    --clr-primary-400: hsl(341, 92%, 62%);
+
+    /* accent color */
+    --clr-accent-400: linear-gradient(to top, hsl(322, 87%, 55%) 0%, hsl(13, 100%, 64%) 100%);
+    --clr-accent-500: linear-gradient(to top, hsl(237, 100%, 64%) 0%, hsl(322, 87%, 55%) 100%);
+
+    /* neutral colors */
+    --clr-neutral-100: hsl(0, 0%, 100%);
+    --clr-neutral-400: hsl(232, 10%, 56%);
+    --clr-neutral-500: hsl(234, 25%, 42%);
+    --clr-neutral-600: hsl(233, 54%, 16%);
+
+    /* font family */
+    --ff-primary: 'Plus Jakarta Sans', sans-serif;
+    font-family: var(--ff-primary);
+
+    /* font sizes */
+    --fs-heading-xl: 56px;
+    --fs-heading-lg: 40px;
+    --fs-heading-md: 32px;
+    --fs-heading-sm: 24px;
+    --fs-body-md: 18px;
+    --fs-body-sm: 16px;
+
+    /* line heights */
+    --lh-heading-xl: 70px;
+    --lh-heading-lg: 51px;
+    --lh-heading-md: 40px;
+    --lh-heading-sm: 28px;
+    --lh-body-md: 28px;
+    --lh-body-sm: 28px;
+
+    font-size: var(--fs-body-md);
+    line-height: var(--lh-body-md);
+    font-weight: 500;
+
+}
+
+body {
+    background-image: url('assets/image-hero-desktop.webp');
+    background-repeat: no-repeat;
+    background-position: 150% -750%;
+}
+
+/* components */
+.main-nav {
+    display: flex;
+    justify-content: space-between;
+    padding-block: 2em;
+}
+
+.container {
+    max-width: 68.75rem;
+    margin-inline: auto;
+}
+
+.courses-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5625rem;
+}
+
+p {
+
+    color: var(--clr-neutral-400);
+}
+
+a {
+    text-decoration: none;
+    color: var(--clr-primary-400);
+}
+
+/* buttons */
+.btn-1 {
+    background-color: var(--clr-neutral-600);
+    color: var(--clr-neutral-100);
+    border: none;
+    border-radius: 100vw;
+    padding: 0.5em 1.5em;
+    font-weight: 700;
+}
+
+.btn-2 {
+    background-image: var(--clr-accent-400);
+    color: var(--clr-neutral-100);
+    border: none;
+    border-radius: 100vw;
+    padding: 0.75em 1.5em;
+    font-weight: 700;
+}
+
+.btn-3 {
+    background-image: var(--clr-accent-500);
+    color: var(--clr-neutral-100);
+    border: none;
+    border-radius: 100vw;
+    padding: 0.75em 1.5em;
+    font-weight: 700;
+}
+
+/* utilities */
+/* headings */
+.h-xl {
+    font-size: var(--fs-heading-xl);
+    line-height: var(--lh-heading-xl);
+    font-weight: 800;
+}
+
+.h-lg {
+    font-size: var(--fs-heading-lg);
+    line-height: var(--lh-heading-lg);
+    font-weight: 800;
+}
+
+.h-md {
+    font-size: var(--fs-heading-md);
+    line-height: var(--lh-heading-md);
+    font-weight: 800;
+}
+
+.h-sm {
+    font-size: var(--fs-heading-sm);
+    line-height: var(--lh-heading-sm);
+    font-weight: 800;
+}
+
+
+
+
+/* grid */
+.grid {
+    display: grid;
+}
+
+.grid-3-col {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.grid-2-col {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+/* flex */
+.flex {
+    display: flex;
+}
+
+.flex-row {
+    flex-direction: row;
+}
+
+.flex-col {
+    flex-direction: column;
+}
+
+.gap-md {
+    gap: 2rem;
+}
+
+/* background colors */
+.bg-primary-300 {
+    background-color: var(--clr-primary-300);
+}
+
+.bg-primary-400 {
+    background-color: var(--clr-primary-400);
+}
+
+.bg-accent-400 {
+    background-image: var(--clr-accent-400);
+}
+
+.bg-accent-500 {
+    background-image: var(--clr-accent-500);
+}
+
+.bg-neutral-100 {
+    background-color: var(--clr-neutral-100);
+}
+
+.bg-neutral-400 {
+    background-color: var(--clr-neutral-400);
+}
+
+.bg-neutral-500 {
+    color: var(--clr-neutral-500);
+}
+
+.bg-neutral-600 {
+    color: var(--clr-neutral-600);
+}
+
+/* text colors */
+.text-primary-300 {
+    color: var(--clr-primary-300);
+}
+
+.text-primary-400 {
+    color: var(--clr-primary-400);
+}
+
+.text-accent-400 {
+    color: var(--clr-accent-400);
+}
+
+.text-accent-500 {
+    color: var(--clr-accent-500);
+}
+
+.text-neutral-100 {
+    color: var(--clr-neutral-100);
+}
+
+.text-neutral-400 {
+    color: var(--clr-neutral-400);
+}
+
+.text-neutral-500 {
+    color: var(--clr-neutral-500);
+}
+
+.text-neutral-600 {
+    color: var(--clr-neutral-600);
+}
+
+/* padding */
+.p-md {
+    padding: 2rem;
+}
+
+/* rounded corner */
+.rounded-sm {
+    border-radius: 1rem;
+}
