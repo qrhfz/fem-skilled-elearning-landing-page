@@ -11,6 +11,7 @@
 
     /* neutral colors */
     --clr-neutral-100: hsl(0, 0%, 100%);
+    --clr-neutral-200: #F0F1FF;
     --clr-neutral-400: hsl(232, 10%, 56%);
     --clr-neutral-500: hsl(234, 25%, 42%);
     --clr-neutral-600: hsl(233, 54%, 16%);
@@ -35,7 +36,6 @@
     --lh-body-md: 28px;
     --lh-body-sm: 28px;
 
-    font-size: var(--fs-body-md);
     line-height: var(--lh-body-md);
     font-weight: 500;
 
@@ -44,7 +44,7 @@
 body {
     background-image: url('assets/image-hero-desktop.webp');
     background-repeat: no-repeat;
-    background-position: 150% -750%;
+    background-position: right -100px top -200px;
 }
 
 /* components */
@@ -65,9 +65,26 @@ body {
     gap: 1.5625rem;
 }
 
-p {
+.courses-grid>div {
+    height: 19.22rem;
+}
 
+.course-icon {
+    background-image: var(--clr-accent-400);
+    border-radius: 100vw;
+    height: 3.5rem;
+    width: 3.5rem;
+}
+
+.course-card {
+    background-color: var(--clr-neutral-100);
+    border-radius: 1rem;
+    padding: 1rem;
+}
+
+p {
     color: var(--clr-neutral-400);
+    font-size: var(--fs-body-md);
 }
 
 a {
@@ -101,6 +118,32 @@ a {
     border-radius: 100vw;
     padding: 0.75em 1.5em;
     font-weight: 700;
+}
+
+.section-1 {
+    height: 44rem;
+}
+
+.headline {
+    display: flex;
+    flex-direction: row;
+    flex-direction: column;
+    gap: 2rem;
+    width: 26rem;
+    align-items: flex-start;
+}
+
+.section-2 {
+    background-image: linear-gradient(var(--clr-neutral-100), var(--clr-neutral-200));
+    padding-bottom: 12rem;
+}
+
+.footer {
+    background-color: var(--clr-neutral-600);
+    padding: 2rem;
+    display: flex;
+    justify-content: space-between;
+
 }
 
 /* utilities */
@@ -158,10 +201,6 @@ a {
     flex-direction: column;
 }
 
-.gap-md {
-    gap: 2rem;
-}
-
 /* background colors */
 .bg-primary-300 {
     background-color: var(--clr-primary-300);
@@ -188,11 +227,11 @@ a {
 }
 
 .bg-neutral-500 {
-    color: var(--clr-neutral-500);
+    background-color: var(--clr-neutral-500);
 }
 
 .bg-neutral-600 {
-    color: var(--clr-neutral-600);
+    background-color: var(--clr-neutral-600);
 }
 
 /* text colors */
