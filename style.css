@@ -7,7 +7,9 @@
 
     /* accent color */
     --clr-accent-400: linear-gradient(to top, hsl(322, 87%, 55%) 0%, hsl(13, 100%, 64%) 100%);
+    --clr-accent-400-hover: linear-gradient(to top, hsla(322, 87%, 55%, 0.5) 0%, hsla(13, 100%, 64%, 0.5) 100%);
     --clr-accent-500: linear-gradient(to top, hsl(237, 100%, 64%) 0%, hsl(322, 87%, 55%) 100%);
+    --clr-accent-500-hover: linear-gradient(to top, hsla(237, 100%, 64%, 0.5) 0%, hsl(322, 87%, 55%, 0.5) 100%);
 
     /* neutral colors */
     --clr-neutral-100: hsl(0, 0%, 100%);
@@ -36,50 +38,35 @@
     --lh-body-md: 28px;
     --lh-body-sm: 28px;
 
+    /* font weight */
+    --fw-med: 500;
+    --fw-bold: 700;
+    --fw-extra-bold: 800;
+
     line-height: var(--lh-body-md);
     font-weight: 500;
 
+    /* image hero */
+    --image-hero-url: url('assets/image-hero-mobile.webp');
+
+}
+
+@media only screen and (min-width: 768px) {
+    :root {
+        --image-hero-url: url('assets/image-hero-tablet.webp');
+    }
+}
+
+@media only screen and (min-width: 1440px) {
+    :root {
+        --image-hero-url: url('assets/image-hero-desktop.webp');
+    }
 }
 
 body {
-    background-image: url('assets/image-hero-desktop.webp');
+    background-image: var(--image-hero-url);
     background-repeat: no-repeat;
     background-position: right -100px top -200px;
-}
-
-/* components */
-.main-nav {
-    display: flex;
-    justify-content: space-between;
-    padding-block: 2em;
-}
-
-.container {
-    max-width: 68.75rem;
-    margin-inline: auto;
-}
-
-.courses-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.5625rem;
-}
-
-.courses-grid>div {
-    height: 19.22rem;
-}
-
-.course-icon {
-    background-image: var(--clr-accent-400);
-    border-radius: 100vw;
-    height: 3.5rem;
-    width: 3.5rem;
-}
-
-.course-card {
-    background-color: var(--clr-neutral-100);
-    border-radius: 1rem;
-    padding: 1rem;
 }
 
 p {
@@ -92,32 +79,125 @@ a {
     color: var(--clr-primary-400);
 }
 
-/* buttons */
-.btn-1 {
-    background-color: var(--clr-neutral-600);
+/* components */
+.main-nav {
+    display: flex;
+    justify-content: space-between;
+    padding-block: 2em;
+}
+
+.container {
+
+    margin-inline: 1rem;
+}
+
+@media only screen and (min-width:768px) {
+    .container {
+        margin-inline: 3.5rem;
+    }
+}
+
+@media only screen and (min-width:1440px) {
+    .container {
+        margin-inline: auto;
+        max-width: 68.75rem;
+    }
+}
+
+.courses-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 3rem;
+}
+
+@media only screen and (min-width:768px) {
+    .courses-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media only screen and (min-width:1440px) {
+    .courses-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.courses-grid>div {
+    height: 21.625rem;
+}
+
+.course-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: var(--clr-neutral-100);
+    border-radius: 1rem;
+    padding: 2rem;
+    padding-top: 2.5rem;
+    margin-top: 1.5rem;
+    position: relative;
+    height: 100%;
+}
+
+.course-icon {
+    background-image: var(--clr-accent-400);
+    border-radius: 100vw;
+    height: 3.5rem;
+    width: 3.5rem;
+    position: absolute;
+    top: -1.75rem;
+}
+
+.course-checkout {
+    background-image: var(--clr-accent-400);
+    border-radius: 1rem;
+    padding: 2rem;
     color: var(--clr-neutral-100);
+    padding: 2rem;
+    padding-top: 2.5rem;
+    margin-top: 1.5rem;
+    height: 100%;
+}
+
+
+/* buttons */
+.btn {
     border: none;
     border-radius: 100vw;
     padding: 0.5em 1.5em;
     font-weight: 700;
+    cursor: pointer;
+}
+
+.btn-1 {
+    background-color: var(--clr-neutral-600);
+    color: var(--clr-neutral-100);
+}
+
+.btn-1:hover {
+    background-color: var(--clr-neutral-500)
 }
 
 .btn-2 {
     background-image: var(--clr-accent-400);
     color: var(--clr-neutral-100);
-    border: none;
-    border-radius: 100vw;
     padding: 0.75em 1.5em;
-    font-weight: 700;
+}
+
+.btn-2:hover {
+    background-image: var(--clr-accent-400-hover);
+    background-color: white;
 }
 
 .btn-3 {
     background-image: var(--clr-accent-500);
     color: var(--clr-neutral-100);
-    border: none;
-    border-radius: 100vw;
     padding: 0.75em 1.5em;
-    font-weight: 700;
+}
+
+.btn-3:hover {
+    background-image: var(--clr-accent-500-hover);
+    background-color: white;
 }
 
 .section-1 {
@@ -129,7 +209,7 @@ a {
     flex-direction: row;
     flex-direction: column;
     gap: 2rem;
-    width: 26rem;
+    width: 29rem;
     align-items: flex-start;
 }
 
@@ -140,6 +220,9 @@ a {
 
 .footer {
     background-color: var(--clr-neutral-600);
+}
+
+.footer-content {
     padding: 2rem;
     display: flex;
     justify-content: space-between;
@@ -173,8 +256,6 @@ a {
 }
 
 
-
-
 /* grid */
 .grid {
     display: grid;
@@ -199,80 +280,4 @@ a {
 
 .flex-col {
     flex-direction: column;
-}
-
-/* background colors */
-.bg-primary-300 {
-    background-color: var(--clr-primary-300);
-}
-
-.bg-primary-400 {
-    background-color: var(--clr-primary-400);
-}
-
-.bg-accent-400 {
-    background-image: var(--clr-accent-400);
-}
-
-.bg-accent-500 {
-    background-image: var(--clr-accent-500);
-}
-
-.bg-neutral-100 {
-    background-color: var(--clr-neutral-100);
-}
-
-.bg-neutral-400 {
-    background-color: var(--clr-neutral-400);
-}
-
-.bg-neutral-500 {
-    background-color: var(--clr-neutral-500);
-}
-
-.bg-neutral-600 {
-    background-color: var(--clr-neutral-600);
-}
-
-/* text colors */
-.text-primary-300 {
-    color: var(--clr-primary-300);
-}
-
-.text-primary-400 {
-    color: var(--clr-primary-400);
-}
-
-.text-accent-400 {
-    color: var(--clr-accent-400);
-}
-
-.text-accent-500 {
-    color: var(--clr-accent-500);
-}
-
-.text-neutral-100 {
-    color: var(--clr-neutral-100);
-}
-
-.text-neutral-400 {
-    color: var(--clr-neutral-400);
-}
-
-.text-neutral-500 {
-    color: var(--clr-neutral-500);
-}
-
-.text-neutral-600 {
-    color: var(--clr-neutral-600);
-}
-
-/* padding */
-.p-md {
-    padding: 2rem;
-}
-
-/* rounded corner */
-.rounded-sm {
-    border-radius: 1rem;
 }
